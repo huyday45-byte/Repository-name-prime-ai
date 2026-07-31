@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background:#f4f6f9;
+        }
+
+        .chat-card{
+            max-width:900px;
+            margin:auto;
+            margin-top:40px;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 10px 20px rgba(0,0,0,.15);
+        }
+
+        .header{
+            background:#0d6efd;
+            color:white;
+            text-align:center;
+            padding:20px;
+            font-size:30px;
+            font-weight:bold;
+        }
+
+        .body-chat{
+            min-height:500px;
+            padding:30px;
+            background:white;
+        }
+
+        .reply{
+            margin-top:30px;
+            background:#eef2ff;
+            padding:20px;
+            border-radius:15px;
+            white-space:pre-wrap;
+        }
+
+        textarea{
+            resize:none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card chat-card">
+
+        <div class="header">
+            🤖 Prime AI
+        </div>
+
+        <div class="body-chat">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nhập câu hỏi
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        name="message"
+                        placeholder="Ví dụ: Việt Nam ở đâu?"
+                        required></textarea>
+
+                </div>
+
+                <button
+                    class="btn btn-primary btn-lg">
+                    Gửi
+                </button>
+
+            </form>
+
+            {% if reply %}
+
+            <div class="reply">
+
+                <h5>🤖 Prime</h5>
+
+                <hr>
+
+                {{ reply }}
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
